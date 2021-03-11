@@ -1,3 +1,10 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -6,6 +13,9 @@ public class Cantons_View {
 	
 	private final Cantons_Model model;
 	private Stage stage;
+	
+	//setup table
+	TableView<Canton> table;
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
 		this.stage = stage;
@@ -17,8 +27,28 @@ public class Cantons_View {
 		VBox vbox = new VBox();
 		
 		pane.setCenter(vbox);
+		 //Table setup
+		//table = new TableView<Canton>();
+		//table.setItems(model.getList());
+		//table.getItems().addAll(Cantons_Model.getList());
+		
+		//make one column displaying cantons in the table
+		//TableColumn<Canton, String> nameColumn = new TableColumn<>("Kanton");
+		//nameColumn.setMinWidth(200);
+		//nameColumn.setCellValueFactory(new PropertyValueFactory<Canton,String>("name"));
+		//insert data into table
+		//table.getColumns().add(nameColumn);
+		ListView<String> list = new ListView<String>();
+		list.setItems(Cantons_Model.getList());
 		
 		
+		
+		
+		pane.setLeft(list);
+		
+		
+		Scene scene = new Scene(pane);
+		stage.setScene(scene);
 		
 	}
 
@@ -26,6 +56,10 @@ public class Cantons_View {
 		
 		stage.show();
 		
+	}
+	
+	public Stage getStage() {
+		return stage;
 	}
 
 }
