@@ -2,9 +2,9 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Cantons extends Application {
-	private Kanton_Model model;
-	private Kanton_View view;
-	private Kanton_Controller controller;
+	private Cantons_Model model;
+	private Cantons_View view;
+	private Cantons_Controller controller;
 
 	public static void main(String[] args) {
 		launch();
@@ -13,9 +13,9 @@ public class Cantons extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		model = new Kanton_Model ();
-		view = new Kanton_View(primaryStage, model);
-		controller = new Kanton_Controller(model, view);
+		model = new Cantons_Model ();
+		view = new Cantons_View(primaryStage, model);
+		controller = new Cantons_Controller(model, view);
 		
 		view.start();
 		
