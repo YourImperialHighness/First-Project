@@ -14,35 +14,19 @@ public class Cantons_View {
 	private final Cantons_Model model;
 	private Stage stage;
 	
-	//setup table
-	TableView<Canton> table;
+	
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
 		this.stage = stage;
 		this.model = model;
 		stage.setTitle("Kantönli");
-		
+		//root
 		BorderPane pane = new BorderPane();
-		
 		VBox vbox = new VBox();
-		
 		pane.setCenter(vbox);
-		 //Table setup
-		//table = new TableView<Canton>();
-		//table.setItems(model.getList());
-		//table.getItems().addAll(Cantons_Model.getList());
-		
-		//make one column displaying cantons in the table
-		//TableColumn<Canton, String> nameColumn = new TableColumn<>("Kanton");
-		//nameColumn.setMinWidth(200);
-		//nameColumn.setCellValueFactory(new PropertyValueFactory<Canton,String>("name"));
-		//insert data into table
-		//table.getColumns().add(nameColumn);
+		//list for showing cantons - getList in model
 		ListView<String> list = new ListView<String>();
 		list.setItems(Cantons_Model.getList());
-		
-		
-		
 		
 		pane.setLeft(list);
 		
