@@ -1,10 +1,12 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -62,7 +64,19 @@ public class Cantons_View {
 		GridPane pane = new GridPane();
 		pane.setId("dataEntry");
 		//TODO - declare controls and organize layout
-		pane.add(new Label("Data Entry Area"), 0, 0);
+		pane.add(new Label("Create a new Canton: "), 0, 0);
+		pane.add(new Label("Name of Canton: "), 0, 1);
+		pane.add(new TextField(""), 1, 1);
+		pane.add(new Label("Shortform of the Canton: "), 0, 2);
+		pane.add(new TextField(""), 1, 2);
+		pane.add(new Label("Population: "), 0, 3);
+		pane.add(new TextField(""), 1, 3);
+		pane.add(new Label("Year of Joining: "), 0, 4);
+		pane.add(new TextField(""), 1, 4);
+		pane.add(new Label("Language : "), 0, 5);
+		pane.add(new TextField(""), 1, 5);
+		pane.add(new Button("Submit new Canton"), 1, 6);
+		
 		return pane;
 	}
 	private Pane createControlPane() {
@@ -70,6 +84,8 @@ public class Cantons_View {
 		pane.setId("ControlArea");
 		//TODO - declare controls and organize layout
 		pane.add(new Label("Control Area"), 0, 0);
+		pane.add(new Button("Delete Canton"), 0, 1);
+		
 		return pane;
 	}
 	private Pane createDataDisplayPane() {
@@ -77,6 +93,13 @@ public class Cantons_View {
 		pane.setId("dataDisplay");
 		//TODO - declare controls and organize layout
 		pane.add(new Label("Data display Area"), 0, 0);
+		pane.add(new Label("Flag: "), 0, 1);
+		pane.add(new Label("Name: "), 0, 2);
+		pane.add(new Label("Shortform: "), 0, 3);
+		pane.add(new Label("Population: "), 0, 4);
+		pane.add(new Label("Year of joining: "), 0, 5);
+		pane.add(new Label("Language: "), 0, 6);
+		
 		return pane;
 	}
 
