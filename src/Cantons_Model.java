@@ -6,7 +6,7 @@ import javafx.scene.control.ListView;
 
 public class Cantons_Model {
 	
-	
+	private Canton currentCanton;
 	
 	
 	protected Cantons_Model() {
@@ -22,6 +22,16 @@ public class Cantons_Model {
 		
 			return items;
 		
+	}
+	//TODO
+	public void saveCanton() {
+		
+	}
+	public void deleteCanton() {
+		
+	}
+	public Canton getCanton() {
+		return currentCanton;
 	}
 
 }

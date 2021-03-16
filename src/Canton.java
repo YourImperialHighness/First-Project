@@ -4,11 +4,15 @@ public class Canton {
 	private int population;
 	private int year;
 	private CantonNames name;
+	private Language language;
+	private String shortform;
 	
-	public Canton(CantonNames name, int population, int year) {
+	public Canton(CantonNames name, int population, int year, Language language, String shortform) {
 		this.population = population;
 		this.year = year;
 		this.name = name;
+		this.language = language;
+		this.shortform = shortform;
 	}
 	
 	
@@ -16,6 +20,7 @@ public class Canton {
 		return this.name + ", " + this.population + " Einwohner, gegründet im Jahr: " + this.year;
 	}
 	
+	//getters and setters
 	public CantonNames getName() {
 		return this.name;
 	}
