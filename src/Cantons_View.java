@@ -19,6 +19,7 @@ public class Cantons_View {
 	
 	
 	
+	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
 		this.stage = stage;
 		this.model = model;
@@ -37,6 +38,9 @@ public class Cantons_View {
 		vbox.getChildren().add(createDataEntryPane());
 		vbox.getChildren().add(createControlPane());	
 		vbox.getChildren().add(createDataDisplayPane());	
+		
+		//TODO - define controls used and buttons
+		
 		
 		
 		Scene scene = new Scene(pane);
@@ -57,18 +61,21 @@ public class Cantons_View {
 	private Pane createDataEntryPane() {
 		GridPane pane = new GridPane();
 		pane.setId("dataEntry");
+		//TODO - declare controls and organize layout
 		pane.add(new Label("Data Entry Area"), 0, 0);
 		return pane;
 	}
 	private Pane createControlPane() {
 		GridPane pane = new GridPane();
 		pane.setId("ControlArea");
+		//TODO - declare controls and organize layout
 		pane.add(new Label("Control Area"), 0, 0);
 		return pane;
 	}
 	private Pane createDataDisplayPane() {
 		GridPane pane = new GridPane();
 		pane.setId("dataDisplay");
+		//TODO - declare controls and organize layout
 		pane.add(new Label("Data display Area"), 0, 0);
 		return pane;
 	}
