@@ -65,9 +65,7 @@ public class Cantons_View {
 		GridPane pane = new GridPane();
 		pane.setId("dataEntry");
 		//TODO - declare controls and organize layout
-		pane.add(new Label("Create a new Canton: "), 0, 0);
-		pane.add(new Label("Name of Canton: "), 0, 1);
-		pane.add(new TextField(""), 1, 1);
+		pane.add(new Label("Enter new data: "), 0, 0);
 		pane.add(new Label("Shortform of the Canton: "), 0, 2);
 		pane.add(new TextField(""), 1, 2);
 		pane.add(new Label("Population: "), 0, 3);
@@ -76,7 +74,7 @@ public class Cantons_View {
 		pane.add(new TextField(""), 1, 4);
 		pane.add(new Label("Language : "), 0, 5);
 		pane.add(new TextField(""), 1, 5);
-		pane.add(new Button("Submit new Canton"), 1, 6);
+		pane.add(new Button("Submit new data"), 1, 6);
 		
 		return pane;
 	}
@@ -85,7 +83,9 @@ public class Cantons_View {
 		pane.setId("ControlArea");
 		//TODO - declare controls and organize layout
 		pane.add(new Label("Control Area"), 0, 0);
-		pane.add(new Button("Delete Canton"), 0, 1);
+		pane.add(new Button("Update Cantons"), 0, 1);
+		pane.add(new Button("Sort Cantons"), 0, 2);
+		pane.add(new Button("Delete Canton"), 0, 3);
 		
 		return pane;
 	}
@@ -97,9 +97,10 @@ public class Cantons_View {
 		pane.add(new Label("Flag: "), 0, 1);
 		pane.add(new Label("Name: "), 0, 2);
 		pane.add(new Label("Shortform: "), 0, 3);
-		pane.add(new Label("Population: "), 0, 4);
-		pane.add(new Label("Year of joining: "), 0, 5);
-		pane.add(new Label("Language: "), 0, 6);
+		pane.add(new Label("Capital: "), 0, 4);
+		pane.add(new Label("Population: "), 0, 5);
+		pane.add(new Label("Year of joining: "), 0, 6);
+		pane.add(new Label("Language: "), 0, 7);
 		
 		return pane;
 	}
