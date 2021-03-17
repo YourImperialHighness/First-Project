@@ -49,6 +49,7 @@ public class Cantons_View {
 		stage.setScene(scene);
 		
 	}
+	
 
 	public void start() {
 		
@@ -102,6 +103,8 @@ public class Cantons_View {
 		
 		return pane;
 	}
+	
+
 
 
 }

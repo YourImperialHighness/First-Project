@@ -6,10 +6,7 @@ public class Cantons extends Application {
 	private Cantons_View view;
 	private Cantons_Controller controller;
 
-	public static void main(String[] args) {
-		launch();
 
-	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -26,5 +23,10 @@ public class Cantons extends Application {
 		
 		
 		
+	}
+	
+	public static void main(String[] args) {
+		launch();
+
 	}
 }
