@@ -1,6 +1,8 @@
 import java.lang.ModuleLayer.Controller;
 import java.util.List;
 
+import com.sun.glass.ui.View;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,8 +11,7 @@ public class Cantons_Controller {
 	private Cantons_Model model;
 	private Cantons_View view;
 	
-	
-	
+		
 	
 	protected Cantons_Controller(Cantons_Model model, Cantons_View view) {
 		this.model = model;
@@ -34,6 +35,8 @@ public class Cantons_Controller {
 	private void updateView(Canton canton) {
 		//TODO
 	}
+	
+	
 	
 	private void validateYear (String newValue) {
 		boolean valid = false;
