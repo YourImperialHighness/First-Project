@@ -19,7 +19,7 @@ public class Cantons_View {
 	private final Cantons_Model model;
 	private Stage stage;
 	
-	
+	protected TextField textYear;
 	
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {

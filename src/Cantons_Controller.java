@@ -1,3 +1,5 @@
+import java.util.List;
+
 import javafx.event.ActionEvent;
 
 public class Cantons_Controller {
@@ -20,6 +22,25 @@ public class Cantons_Controller {
 	}
 	private void updateView(Canton canton) {
 		//TODO
+	}
+	
+	private void validateYear (int newValue) {
+		boolean valid = false;
+		
+		int validYear = 0;
+		
+		if (validYear <= 2021 && validYear > 1290) {
+			valid = true;
+		}
+		
+		view.textYear.getStyleClass().remove("YearOk");
+		view.textYear.getStyleClass().remove("YearNotOk");
+		if (valid) {
+			view.textYear.getStyleClass().add("YearOk");		
+		} else {
+			view.textYear.getStyleClass().add("YearNotOK");
+		}
+		
 	}
 
 }
