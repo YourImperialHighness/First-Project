@@ -8,6 +8,13 @@ public enum CantonNames {
 		this.capital = capital;
 	}
 
-	
+	public String toString(CantonNames name) {
+		return valueOf(name);
+	}
+
+	public String getCapital() {
+		// TODO Auto-generated method stub
+		return this.capital;
+	}
 
 }

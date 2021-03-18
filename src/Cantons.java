@@ -5,9 +5,6 @@ public class Cantons extends Application {
 	private Cantons_Model model;
 	private Cantons_View view;
 	private Cantons_Controller controller;
-
-
-
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		model = new Cantons_Model ();
@@ -29,4 +26,6 @@ public class Cantons extends Application {
 		launch();
 
 	}
+
+	
 }

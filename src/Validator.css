@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 .yearOk {
+=======
+.YearOk {
+>>>>>>> refs/remotes/origin/main
   -fx-text-fill: green;
 }
 
+<<<<<<< HEAD
 .yearNotOk {
+=======
+.YearNotOk {
+>>>>>>> refs/remotes/origin/main
   -fx-text-fill: red;
 }

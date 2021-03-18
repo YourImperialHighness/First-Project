@@ -1,19 +1,30 @@
+import java.lang.ModuleLayer.Controller;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 public class Cantons_Controller {
-
-	Cantons_Model model;
-	Cantons_View view;
+	private Cantons_Model model;
+	private Cantons_View view;
 	
-	public Cantons_Controller(Cantons_Model model, Cantons_View view) {
+	
+	
+	
+	protected Cantons_Controller(Cantons_Model model, Cantons_View view) {
 		this.model = model;
 		this.view = view;
-		
-		//TODO - btns setOnAction
+
+		view.textYear.textProperty().addListener(
+				// Parameters of any PropertyChangeListener
+				(observable, oldValue, newValue) -> validateYear(newValue));
 		
 	}
+		
+	
+
+	
 	private void save(ActionEvent e) {
 		//TODO
 	}
@@ -24,14 +35,15 @@ public class Cantons_Controller {
 		//TODO
 	}
 	
-	private void validateYear (int newValue) {
+	private void validateYear (String newValue) {
 		boolean valid = false;
 		
-		int validYear = 0;
+		//test mit 1999
 		
-		if (validYear <= 2021 && validYear > 1290) {
-			valid = true;
-		}
+		if(view.textYear.getText()=="1999") {
+			valid=true;
+		} else valid = false;
+		
 		
 		view.textYear.getStyleClass().remove("YearOk");
 		view.textYear.getStyleClass().remove("YearNotOk");
@@ -42,5 +54,7 @@ public class Cantons_Controller {
 		}
 		
 	}
+	
+	
 
 }

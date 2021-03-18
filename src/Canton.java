@@ -7,6 +7,7 @@ public class Canton {
 	private Language language;
 	private String shortform;
 	
+	
 	public Canton(CantonNames name, int population, int year, Language language, String shortform) {
 		this.population = population;
 		this.year = year;
@@ -21,11 +22,17 @@ public class Canton {
 	}
 	
 	//getters and setters
-	public CantonNames getName() {
-		return this.name;
+	public String getName() {
+		return String.valueOf(this.name);
 	}
 	public void setName(CantonNames name) {
 		this.name = name;
 	}
+	public String getCapital(Canton canton) {
+		return this.name.getCapital();
+	}
+
+
+	
 
 }
