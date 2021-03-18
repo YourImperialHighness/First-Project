@@ -18,6 +18,10 @@ public class Cantons_View {
 	
 	private final Cantons_Model model;
 	private Stage stage;
+	//data fields labels
+	public Label lblDataCapital = new Label();
+	public Label lblDataName = new Label();
+
 	
 	protected TextField textYear;
 	
@@ -33,7 +37,7 @@ public class Cantons_View {
 		pane.setCenter(vbox);
 		//list for showing cantons - getList in model
 		ListView<String> list = new ListView<String>();
-		list.setItems(Cantons_Model.getList());
+		list.setItems(Cantons_Controller.getList());
 		pane.setLeft(list);
 		
 		//add right side of view - just basic details

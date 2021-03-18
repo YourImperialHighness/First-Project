@@ -21,11 +21,14 @@ public class Canton {
 	}
 	
 	//getters and setters
-	public CantonNames getName() {
-		return this.name;
+	public String getName() {
+		return String.valueOf(this.name);
 	}
 	public void setName(CantonNames name) {
 		this.name = name;
+	}
+	public String getCapital(Canton canton) {
+		return this.name.getCapital();
 	}
 
 }
