@@ -38,7 +38,7 @@ public class Cantons_Controller {
 		
 		view.textYear.getStyleClass().remove("YearOk");
 		view.textYear.getStyleClass().remove("YearNotOk");
-		if (valid==true) {
+		if (valid) {
 			view.textYear.getStyleClass().add("YearOk");		
 		} else {
 			view.textYear.getStyleClass().add("YearNotOK");
