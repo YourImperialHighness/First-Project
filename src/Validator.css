@@ -1,7 +1,7 @@
-.emailOk {
+.YearOk {
   -fx-text-fill: green;
 }
 
-.emailNotOk {
+.YearNotOk {
   -fx-text-fill: red;
 }

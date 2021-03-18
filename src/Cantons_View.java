@@ -15,16 +15,18 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Cantons_View {
-	
-	private final Cantons_Model model;
+	private Cantons_Model model;
 	private Stage stage;
-	
+	protected TextField textShortForm;
+	protected TextField textPopulation;
 	protected TextField textYear;
-	
+	protected TextField textLanguage;
+		
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
 		this.stage = stage;
 		this.model = model;
+		
 		stage.setTitle("Kantönli");
 		//root
 		BorderPane pane = new BorderPane();
@@ -36,76 +38,68 @@ public class Cantons_View {
 		list.setItems(Cantons_Model.getList());
 		pane.setLeft(list);
 		
+		GridPane gpEnter = new GridPane();
+		gpEnter.setId("dataEntry");
+		//TODO - declare controls and organize layout
+		gpEnter.add(new Label("Enter new data: "), 0, 0);
+		
+		gpEnter.add(new Label("Shortform of the Canton: "), 0, 2);
+		gpEnter.add(textShortForm = new TextField(""), 1, 2);
+		gpEnter.add(new Label("Population: "), 0, 3);
+		gpEnter.add(textPopulation = new TextField(""), 1, 3);
+		gpEnter.add(new Label("Year of Joining: "), 0, 4);
+		gpEnter.add(textYear = new TextField(""), 1, 4);
+		gpEnter.add(new Label("Language : "), 0, 5);
+		gpEnter.add(textLanguage = new TextField(""), 1, 5);
+		gpEnter.add(new Button("Submit new data"), 1, 6);
+		
+		GridPane gpControl = new GridPane();
+		gpControl.setId("ControlArea");
+		//TODO - declare controls and organize layout
+		gpControl.add(new Label("Control Area"), 0, 0);
+		gpControl.add(new Button("Update Cantons"), 0, 1);
+		gpControl.add(new Button("Sort Cantons"), 0, 2);
+		gpControl.add(new Button("Delete Canton"), 0, 3);
+		
+		GridPane gpCreate = new GridPane();
+		gpCreate.setId("dataDisplay");
+		//TODO - declare controls and organize layout
+		gpCreate.add(new Label("Data display Area"), 0, 0);
+		gpCreate.add(new Label("Flag: "), 0, 1);
+		gpCreate.add(new Label("Name: "), 0, 2);
+		gpCreate.add(new Label("Shortform: "), 0, 3);
+		gpCreate.add(new Label("Capital: "), 0, 4);
+		gpCreate.add(new Label("Population: "), 0, 5);
+		gpCreate.add(new Label("Year of joining: "), 0, 6);
+		gpCreate.add(new Label("Language: "), 0, 7);
+		
+		
 		//add right side of view - just basic details
-		vbox.getChildren().add(createDataEntryPane());
-		vbox.getChildren().add(createControlPane());	
-		vbox.getChildren().add(createDataDisplayPane());	
-		
-		//TODO - define controls used and buttons
-		
+		vbox.getChildren().add(gpEnter);
+		vbox.getChildren().add(gpControl);	
+		vbox.getChildren().add(gpCreate);
 		
 		
 		Scene scene = new Scene(pane);
-		stage.setScene(scene);
+		scene.getStylesheets().add(
+				getClass().getResource("Validator.css").toExternalForm());        
+        stage.setScene(scene);
 		
 	}
 	
 
 	public void start() {
-		
 		stage.show();
-		
 	}
 	
 	public Stage getStage() {
 		return stage;
 	}
-	
-	private Pane createDataEntryPane() {
-		GridPane pane = new GridPane();
-		pane.setId("dataEntry");
-		//TODO - declare controls and organize layout
-		pane.add(new Label("Enter new data: "), 0, 0);
-		pane.add(new Label("Shortform of the Canton: "), 0, 2);
-		pane.add(new TextField(""), 1, 2);
-		pane.add(new Label("Population: "), 0, 3);
-		pane.add(new TextField(""), 1, 3);
-		pane.add(new Label("Year of Joining: "), 0, 4);
-		pane.add(new TextField(""), 1, 4);
-		pane.add(new Label("Language : "), 0, 5);
-		pane.add(new TextField(""), 1, 5);
-		pane.add(new Button("Submit new data"), 1, 6);
-		
-		return pane;
-	}
-	private Pane createControlPane() {
-		GridPane pane = new GridPane();
-		pane.setId("ControlArea");
-		//TODO - declare controls and organize layout
-		pane.add(new Label("Control Area"), 0, 0);
-		pane.add(new Button("Update Cantons"), 0, 1);
-		pane.add(new Button("Sort Cantons"), 0, 2);
-		pane.add(new Button("Delete Canton"), 0, 3);
-		
-		return pane;
-	}
-	private Pane createDataDisplayPane() {
-		GridPane pane = new GridPane();
-		pane.setId("dataDisplay");
-		//TODO - declare controls and organize layout
-		pane.add(new Label("Data display Area"), 0, 0);
-		pane.add(new Label("Flag: "), 0, 1);
-		pane.add(new Label("Name: "), 0, 2);
-		pane.add(new Label("Shortform: "), 0, 3);
-		pane.add(new Label("Capital: "), 0, 4);
-		pane.add(new Label("Population: "), 0, 5);
-		pane.add(new Label("Year of joining: "), 0, 6);
-		pane.add(new Label("Language: "), 0, 7);
-		
-		return pane;
-	}
-	
-
-
-
+				
+			
 }
+	
+
+
+
+
