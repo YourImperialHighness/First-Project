@@ -7,6 +7,7 @@ public class Canton {
 	private Language language;
 	private String shortform;
 	
+	
 	public Canton(CantonNames name, int population, int year, Language language, String shortform) {
 		this.population = population;
 		this.year = year;
@@ -30,5 +31,8 @@ public class Canton {
 	public String getCapital(Canton canton) {
 		return this.name.getCapital();
 	}
+
+
+	
 
 }

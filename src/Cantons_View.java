@@ -42,7 +42,7 @@ public class Cantons_View {
 		pane.setCenter(vbox);
 		//list for showing cantons - getList in model
 		ListView<String> list = new ListView<String>();
-		list.setItems(Cantons_Controller.getList());
+		list.setItems(model.getList());
 		pane.setLeft(list);
 		
 		GridPane gpEnter = new GridPane();
