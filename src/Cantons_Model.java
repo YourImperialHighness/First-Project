@@ -18,19 +18,19 @@ public class Cantons_Model {
 		
 
 	//TODO
-	public void saveCanton(CantonNames name, int population, int year, Language language, String shortform) {
-		cantonProperty.set(new Canton(name, population, year, language, shortform));
-	}
-	public void deleteCanton() {
-		
-	}
-	public Canton getCanton() {
-		return cantonProperty.get();
-	}
-	public void updateCanton() {
-		int cantonInd = listView.getSelectionModel().getSelectedIndices();
-		new Canton(name, population, year, language, shortform)
-	}
+	//public void saveCanton(CantonNames name, int population, int year, Language language, String shortform) {
+	//	cantonProperty.set(new Canton(name, population, year, language, shortform));
+	//}
+	//public void deleteCanton() {
+	//	
+	//}
+	//public Canton getCanton() {
+	//	return cantonProperty.get();
+	//}
+	//public void updateCanton() {
+	//	int cantonInd = listView.getSelectionModel().getSelectedIndices();
+	//	new Canton(name, population, year, language, shortform)
+	//}
 	
 
 	public void initializeArray() {

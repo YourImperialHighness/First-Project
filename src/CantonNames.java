@@ -9,7 +9,7 @@ public enum CantonNames {
 	}
 
 	public String toString(CantonNames name) {
-		return valueOf(name);
+		return String.valueOf(name);
 	}
 
 	public String getCapital() {
