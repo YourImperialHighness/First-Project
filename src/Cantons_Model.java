@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 
 public class Cantons_Model {
 	
@@ -18,8 +19,8 @@ public class Cantons_Model {
 		
 
 	//TODO
-	public void saveCanton(CantonNames name, int population, int year, Language language, String shortform) {
-		cantonProperty.set(new Canton(name, population, year, language, shortform));
+	public void saveCanton(CantonNames name, int population, int year, Language language, String shortform, ImageView flag) {
+		cantonProperty.set(new Canton(name, population, year, language, shortform, flag));
 	}
 	public void deleteCanton() {
 		
