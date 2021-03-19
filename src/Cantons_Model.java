@@ -37,11 +37,9 @@ public class Cantons_Model {
 	public void initializeArray() {
 		CantonNames enums[] = CantonNames.values();
 		for (int i=0; i<26; i++) {
-<<<<<<< HEAD
+
 			Canton cantonli = new Canton(enums[i], 0, 0, Language.Deutsch , "x", flag);
-=======
-			Canton cantonli = new Canton(enums[i], 0, 0, Language.Deutsch , "x", null );
->>>>>>> branch 'main' of https://github.com/YourImperialHighness/First-Project
+
 			arr[i] = cantonli;
 			
 		}arrayProperty.set(arr);
