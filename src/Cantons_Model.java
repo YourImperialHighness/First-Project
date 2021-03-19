@@ -26,17 +26,22 @@ public class Cantons_Model {
 		
 	}
 	public Canton getCanton() {
-		return currentCanton;
+		return cantonProperty.get();
 	}
 	public void updateCanton() {
 		int cantonInd = listView.getSelectionModel().getSelectedIndices();
 		new Canton(name, population, year, language, shortform)
 	}
+	
 
 	public void initializeArray() {
 		CantonNames enums[] = CantonNames.values();
 		for (int i=0; i<26; i++) {
+<<<<<<< HEAD
 			Canton cantonli = new Canton(enums[i], 0, 0, Language.Deutsch , "x", flag);
+=======
+			Canton cantonli = new Canton(enums[i], 0, 0, Language.Deutsch , "x", null );
+>>>>>>> branch 'main' of https://github.com/YourImperialHighness/First-Project
 			arr[i] = cantonli;
 			
 		}arrayProperty.set(arr);
@@ -51,20 +56,16 @@ public class Cantons_Model {
 		
 	}
 
-	public ObservableList<String> getList() {
+	public ObservableList<Canton> getList() {
 		
-		ObservableList<String> items = FXCollections.<String>observableArrayList();
+		ObservableList<Canton> items = FXCollections.<Canton>observableArrayList();
 		
 		 Canton[] arr = this.getArray();
 			for(int i=0; i<26; i++) {
-				Canton theCantonName = arr[i];
-				items.add(theCantonName.getName());
+				Canton theCanton = arr[i];
+				items.add(theCanton);//.getName()
 			
 		}return items;
-		//for (CantonNames name : CantonNames.values()) {
-			//items.add(name.name());
-			//new Canton(name.name(), 0, 0, Language.Deutsch, "x");}
-		//}return items;
 }
 	
 	
