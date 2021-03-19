@@ -10,19 +10,19 @@ public class Cantons_Controller {
 		this.model = model;
 		this.view = view;
 
-<<<<<<< HEAD
+
 		view.textYear.textProperty().addListener(
 				// Parameters of any PropertyChangeListener
 				(observable, oldValue, newValue) -> validateYear(newValue));
 		
 	
 		
-=======
+
 		view.textYear.textProperty().addListener((observable, oldValue, newValue) -> validateYear(newValue));
 		view.textShortForm.textProperty().addListener((observable, oldValue, newValue) -> validateShortForm(newValue));
 		view.textPopulation.textProperty().addListener((observable, oldValue, newValue) -> validatePopulation(newValue));
 		view.textLanguage.textProperty().addListener((observable, oldValue, newValue) -> validateLanguage(newValue));
->>>>>>> refs/remotes/origin/main
+
 	}
 		
 	private void validateYear(String newValue) {
@@ -113,26 +113,26 @@ public class Cantons_Controller {
 		//TODO
 	}
 	
-<<<<<<< HEAD
+
 	
 	
-	private void validateYear (String newValue) {
-		boolean valid = false;
+	//private void validateYear (String newValue) {
+	//	boolean valid = false;
 		
 		//test mit 1999
 		
-		if(view.textYear.getText() == "1999") {
-			valid=true;
-		} else valid = false;
+	//	if(view.textYear.getText() == "1999") {
+	//		valid=true;
+			//	} else valid = false;
 		
 		
-		view.textYear.getStyleClass().remove("YearOk");
-		view.textYear.getStyleClass().remove("YearNotOk");
-		if (valid) {
-			view.textYear.getStyleClass().add("YearOk");		
-		} else {
-			view.textYear.getStyleClass().add("YearNotOK");
-=======
+	//	view.textYear.getStyleClass().remove("YearOk");
+	//	view.textYear.getStyleClass().remove("YearNotOk");
+	//	if (valid) {
+	//		view.textYear.getStyleClass().add("YearOk");		
+	//	} else {
+	//		view.textYear.getStyleClass().add("YearNotOK");
+
 	public boolean istEineZahl(String eingabe) {
         //Prüfen ob 'eingabe' eine ganze Zahl ist. Wenn ein Zeichen keine Zahl ist, ist das Ergebnis 'false'.
         boolean zahl=true;
@@ -159,7 +159,7 @@ public class Cantons_Controller {
 
 
 			return false;
->>>>>>> refs/remotes/origin/main
+
 		}
 		return true;
 	}

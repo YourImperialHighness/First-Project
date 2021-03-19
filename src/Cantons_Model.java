@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 
 public class Cantons_Model {
 	
@@ -18,24 +19,27 @@ public class Cantons_Model {
 		
 
 	//TODO
-	public void saveCanton(CantonNames name, int population, int year, Language language, String shortform) {
-		cantonProperty.set(new Canton(name, population, year, language, shortform));
+	public void saveCanton(CantonNames name, int population, int year, Language language, String shortform, ImageView flag) {
+		cantonProperty.set(new Canton(name, population, year, language, shortform, flag));
 	}
 	public void deleteCanton() {
 		
 	}
 	public Canton getCanton() {
-		return currentCanton;
+		return cantonProperty.get();
 	}
 	public void updateCanton() {
 		int cantonInd = listView.getSelectionModel().getSelectedIndices();
 		new Canton(name, population, year, language, shortform)
 	}
+	
 
 	public void initializeArray() {
 		CantonNames enums[] = CantonNames.values();
 		for (int i=0; i<26; i++) {
-			Canton cantonli = new Canton(enums[i], 0, 0, Language.Deutsch , "x" );
+
+			Canton cantonli = new Canton(enums[i], 0, 0, Language.Deutsch , "x", flag);
+
 			arr[i] = cantonli;
 			
 		}arrayProperty.set(arr);
@@ -50,20 +54,16 @@ public class Cantons_Model {
 		
 	}
 
-	public ObservableList<String> getList() {
+	public ObservableList<Canton> getList() {
 		
-		ObservableList<String> items = FXCollections.<String>observableArrayList();
+		ObservableList<Canton> items = FXCollections.<Canton>observableArrayList();
 		
 		 Canton[] arr = this.getArray();
 			for(int i=0; i<26; i++) {
-				Canton theCantonName = arr[i];
-				items.add(theCantonName.getName());
+				Canton theCanton = arr[i];
+				items.add(theCanton);//.getName()
 			
 		}return items;
-		//for (CantonNames name : CantonNames.values()) {
-			//items.add(name.name());
-			//new Canton(name.name(), 0, 0, Language.Deutsch, "x");}
-		//}return items;
 }
 	
 	

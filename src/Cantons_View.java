@@ -37,7 +37,7 @@ public class Cantons_View {
 		VBox vbox = new VBox();
 		pane.setCenter(vbox);
 		//list for showing cantons - getList in model
-		ListView<String> list = new ListView<String>();
+		ListView<Canton> list = new ListView<Canton>();
 		list.setItems(model.getList());
 		pane.setLeft(list);
 		
