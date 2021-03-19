@@ -18,7 +18,7 @@ public class Canton {
 	
 	
 	public String toString() {
-		return this.name + ", " + this.population + " Einwohner, gegründet im Jahr: " + this.year;
+		return " " + this.name;
 	}
 	
 	//getters and setters
