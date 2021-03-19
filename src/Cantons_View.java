@@ -19,6 +19,7 @@ public class Cantons_View {
 	
 	protected TextField textShortForm;
 	protected TextField textPopulation;
+	protected TextField textArea;
 
 	protected TextField textYear;
 	protected TextField textLanguage;
@@ -47,13 +48,20 @@ public class Cantons_View {
 		
 		gpEnter.add(new Label("Shortform of the Canton: "), 0, 2);
 		gpEnter.add(textShortForm = new TextField(""), 1, 2);
+		
 		gpEnter.add(new Label("Population: "), 0, 3);
 		gpEnter.add(textPopulation = new TextField(""), 1, 3);
-		gpEnter.add(new Label("Year of Joining: "), 0, 4);
-		gpEnter.add(textYear = new TextField(""), 1, 4);
-		gpEnter.add(new Label("Language: "), 0, 5);
-		gpEnter.add(textLanguage = new TextField(""), 1, 5);
-		gpEnter.add(new Button("Submit new data"), 1, 6);
+		
+		gpEnter.add(new Label("Area km2: "), 0, 4);
+		gpEnter.add(textPopulation = new TextField(""), 1, 4);
+		
+		gpEnter.add(new Label("Year of Joining: "), 0, 5);
+		gpEnter.add(textYear = new TextField(""), 1, 5);
+		
+		gpEnter.add(new Label("Language: "), 0, 6);
+		gpEnter.add(textLanguage = new TextField(""), 1, 6);
+		
+		gpEnter.add(new Button("Submit new data"), 1, 7);
 		
 		GridPane gpControl = new GridPane();
 		gpControl.setId("ControlArea");
@@ -72,8 +80,9 @@ public class Cantons_View {
 		gpCreate.add(new Label("Shortform: "), 0, 3);
 		gpCreate.add(new Label("Capital: "), 0, 4);
 		gpCreate.add(new Label("Population: "), 0, 5);
-		gpCreate.add(new Label("Year of joining: "), 0, 6);
-		gpCreate.add(new Label("Language: "), 0, 7);
+		gpCreate.add(new Label("Area km2: "), 0, 6);
+		gpCreate.add(new Label("Year of joining: "), 0, 7);
+		gpCreate.add(new Label("Language: "), 0, 8);
 		
 		
 		//add right side of view - just basic details
