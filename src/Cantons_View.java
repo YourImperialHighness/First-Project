@@ -3,6 +3,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -27,12 +28,16 @@ public class Cantons_View {
 	
 	protected TextField textShortForm;
 	protected TextField textPopulation;
+	protected TextField textArea;
 
 	protected TextField textYear;
 	protected TextField textLanguage;
-	protected TextField textArea;
 	
+	
+
 	ListView<Canton> list = new ListView<Canton>();
+
+
 		
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
@@ -57,15 +62,26 @@ public class Cantons_View {
 		
 		gpEnter.add(new Label("Shortform of the Canton: "), 0, 2);
 		gpEnter.add(textShortForm = new TextField(""), 1, 2);
+		
 		gpEnter.add(new Label("Population: "), 0, 3);
 		gpEnter.add(textPopulation = new TextField(""), 1, 3);
+
 		gpEnter.add(new Label("Year of Joining: "), 0, 4);
 		gpEnter.add(textYear = new TextField(""), 1, 4);
-		gpEnter.add(new Label("Area: "), 0, 5);
+		gpEnter.add(new Label("Area km2: "), 0, 5);
 		gpEnter.add(textArea = new TextField(""), 1, 5);
 		gpEnter.add(new Label("Language: "), 0, 6);
 		gpEnter.add(textLanguage = new TextField(""), 1, 6);
 		gpEnter.add(btnSubmit, 1, 7);
+
+		
+
+		
+		
+		
+	
+		
+
 		
 		GridPane gpControl = new GridPane();
 		gpControl.setId("ControlArea");
@@ -80,19 +96,26 @@ public class Cantons_View {
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
 		gpCreate.add(new Label("Flag: "), 0, 1);
+
 		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
 		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
 		gpCreate.add(new Label("Capital: "), 0, 4); gpCreate.add(lblDataCapital, 1, 4);
 		gpCreate.add(new Label("Population: "), 0, 5); gpCreate.add(lblDataPop, 1, 5);
 		gpCreate.add(new Label("Year of joining: "), 0, 6); gpCreate.add(lblDataYear, 1, 6);
-		gpCreate.add(new Label("Area: "), 0, 7); gpCreate.add(lblDataArea, 1, 7);
+		gpCreate.add(new Label("Area km2: "), 0, 7); gpCreate.add(lblDataArea, 1, 7);
 		gpCreate.add(new Label("Language: "), 0, 8); gpCreate.add(lblDataLang, 1, 8);
+
+	
 		
 		
 		//add right side of view - just basic details
 		vbox.getChildren().add(gpEnter);
 		vbox.getChildren().add(gpControl);	
 		vbox.getChildren().add(gpCreate);
+		vbox.getChildren().add( new ImageView ("kt-ag.jpg"));
+		
+		//Flagge einfügen Test
+		
 		
 		
 		Scene scene = new Scene(pane);
