@@ -1,15 +1,31 @@
-<<<<<<< HEAD
-.yearOk {
-=======
 .YearOk {
->>>>>>> refs/remotes/origin/main
   -fx-text-fill: green;
 }
 
-<<<<<<< HEAD
-.yearNotOk {
-=======
 .YearNotOk {
->>>>>>> refs/remotes/origin/main
+  -fx-text-fill: red;
+}
+
+.ShortFormOk {
+  -fx-text-fill: green;
+}
+
+.ShortFormNotOk {
+  -fx-text-fill: red;
+}
+
+.PopulationOk {
+  -fx-text-fill: green;
+}
+
+.PopulationNotOk {
+  -fx-text-fill: red;
+}
+
+.LanguageOk {
+  -fx-text-fill: green;
+}
+
+.LanguageNotOk {
   -fx-text-fill: red;
 }

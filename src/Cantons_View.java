@@ -1,16 +1,10 @@
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -28,6 +22,7 @@ public class Cantons_View {
 
 	protected TextField textYear;
 	protected TextField textLanguage;
+	
 		
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
@@ -56,7 +51,7 @@ public class Cantons_View {
 		gpEnter.add(textPopulation = new TextField(""), 1, 3);
 		gpEnter.add(new Label("Year of Joining: "), 0, 4);
 		gpEnter.add(textYear = new TextField(""), 1, 4);
-		gpEnter.add(new Label("Language : "), 0, 5);
+		gpEnter.add(new Label("Language: "), 0, 5);
 		gpEnter.add(textLanguage = new TextField(""), 1, 5);
 		gpEnter.add(new Button("Submit new data"), 1, 6);
 		
@@ -103,7 +98,7 @@ public class Cantons_View {
 		return stage;
 	}
 				
-			
+	 
 }
 	
 
