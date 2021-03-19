@@ -20,6 +20,8 @@ public class Cantons_Controller {
 				// Parameters of any PropertyChangeListener
 				(observable, oldValue, newValue) -> validateYear(newValue));
 		
+	
+		
 	}
 		
 	
@@ -35,12 +37,14 @@ public class Cantons_Controller {
 		//TODO
 	}
 	
+	
+	
 	private void validateYear (String newValue) {
 		boolean valid = false;
 		
 		//test mit 1999
 		
-		if(view.textYear.getText()=="1999") {
+		if(view.textYear.getText() == "1999") {
 			valid=true;
 		} else valid = false;
 		
