@@ -3,6 +3,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -23,6 +24,7 @@ public class Cantons_View {
 
 	protected TextField textYear;
 	protected TextField textLanguage;
+	
 	
 		
 	
@@ -89,6 +91,10 @@ public class Cantons_View {
 		vbox.getChildren().add(gpEnter);
 		vbox.getChildren().add(gpControl);	
 		vbox.getChildren().add(gpCreate);
+		vbox.getChildren().add( new ImageView ("kt-ag.jpg"));
+		
+		//Flagge einfügen Test
+		
 		
 		
 		Scene scene = new Scene(pane);
