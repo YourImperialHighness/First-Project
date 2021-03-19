@@ -22,6 +22,9 @@ public class Cantons_Controller {
 		view.textShortForm.textProperty().addListener((observable, oldValue, newValue) -> validateShortForm(newValue));
 		view.textPopulation.textProperty().addListener((observable, oldValue, newValue) -> validatePopulation(newValue));
 		view.textLanguage.textProperty().addListener((observable, oldValue, newValue) -> validateLanguage(newValue));
+		
+		view.btnSubmit.setOnAction(this::submitData);
+		view.btnUpdate.setOnAction(this::updateView);
 
 	}
 		
@@ -109,9 +112,39 @@ public class Cantons_Controller {
 	private void delete(ActionEvent e) {
 		//TODO
 	}
-	private void updateView(Canton canton) {
-		//TODO
+	private void submitData(ActionEvent e) {
+		//model.submitData();
+		//selected item
+		Canton canton = (Canton)view.list.getSelectionModel().getSelectedItem();
+		//edit canton data in canton
+		//canton.setName(String.valueOf(canton));
+		//view.lblDataCapital.setText(canton.getCapital(canton));
+		canton.setPopulation(Integer.parseInt(view.textPopulation.getText()));
+		canton.setYear(Integer.parseInt(view.textYear.getText()));
+		canton.setArea(Integer.parseInt(view.textArea.getText()));
+		canton.setShortform((view.textShortForm.getText()));
+		canton.setLanguage(view.textLanguage.getText());
+		//updateView(view.list.getSelectionModel().getSelectedItem());
 	}
+	private void updateView(ActionEvent e) {
+		//TODO
+		Canton canton = (Canton)view.list.getSelectionModel().getSelectedItem();
+		if (canton != null) {
+			view.lblDataName.setText(String.valueOf(canton.getName()));
+			view.lblDataCapital.setText(canton.getCapital(canton));
+			view.lblDataPop.setText(String.valueOf(canton.getPopulation()));
+			view.lblDataYear.setText(String.valueOf(canton.getYear()));
+			view.lblDataArea.setText(String.valueOf(canton.getArea()));
+			view.lblDataShortform.setText(canton.getShortform());
+			view.lblDataLang.setText(String.valueOf(canton.getLanguage()));
+		} else {
+			view.lblDataCapital.setText("N/A");
+			view.lblDataName.setText("N/A");
+			view.lblDataPop.setText("N/A");
+			view.lblDataYear.setText("N/A");
+		}
+	}
+	//private void edit()
 	
 
 	

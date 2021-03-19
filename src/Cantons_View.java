@@ -12,9 +12,17 @@ public class Cantons_View {
 	private Cantons_Model model;
 	private Stage stage;
 
+	//buttons
+	Button btnUpdate = new Button("Update Cantons");
+	Button btnSubmit = new Button("Submit new data");
 	//data fields labels
 	public Label lblDataCapital = new Label();
 	public Label lblDataName = new Label();
+	public Label lblDataPop = new Label();
+	public Label lblDataYear = new Label();
+	public Label lblDataArea = new Label();
+	public Label lblDataShortform = new Label();
+	public Label lblDataLang = new Label();
 
 	
 	protected TextField textShortForm;
@@ -22,7 +30,9 @@ public class Cantons_View {
 
 	protected TextField textYear;
 	protected TextField textLanguage;
+	protected TextField textArea;
 	
+	ListView<Canton> list = new ListView<Canton>();
 		
 	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
@@ -36,7 +46,7 @@ public class Cantons_View {
 		VBox vbox = new VBox();
 		pane.setCenter(vbox);
 		//list for showing cantons - getList in model
-		ListView<Canton> list = new ListView<Canton>();
+		
 		list.setItems(model.getList());
 		pane.setLeft(list);
 		
@@ -51,15 +61,17 @@ public class Cantons_View {
 		gpEnter.add(textPopulation = new TextField(""), 1, 3);
 		gpEnter.add(new Label("Year of Joining: "), 0, 4);
 		gpEnter.add(textYear = new TextField(""), 1, 4);
-		gpEnter.add(new Label("Language: "), 0, 5);
-		gpEnter.add(textLanguage = new TextField(""), 1, 5);
-		gpEnter.add(new Button("Submit new data"), 1, 6);
+		gpEnter.add(new Label("Area: "), 0, 5);
+		gpEnter.add(textArea = new TextField(""), 1, 5);
+		gpEnter.add(new Label("Language: "), 0, 6);
+		gpEnter.add(textLanguage = new TextField(""), 1, 6);
+		gpEnter.add(btnSubmit, 1, 7);
 		
 		GridPane gpControl = new GridPane();
 		gpControl.setId("ControlArea");
 		//TODO - declare controls and organize layout
 		gpControl.add(new Label("Control Area"), 0, 0);
-		gpControl.add(new Button("Update Cantons"), 0, 1);
+		gpControl.add(btnUpdate, 0, 1);
 		gpControl.add(new Button("Sort Cantons"), 0, 2);
 		gpControl.add(new Button("Delete Canton"), 0, 3);
 		
@@ -68,12 +80,13 @@ public class Cantons_View {
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
 		gpCreate.add(new Label("Flag: "), 0, 1);
-		gpCreate.add(new Label("Name: "), 0, 2);
-		gpCreate.add(new Label("Shortform: "), 0, 3);
-		gpCreate.add(new Label("Capital: "), 0, 4);
-		gpCreate.add(new Label("Population: "), 0, 5);
-		gpCreate.add(new Label("Year of joining: "), 0, 6);
-		gpCreate.add(new Label("Language: "), 0, 7);
+		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
+		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
+		gpCreate.add(new Label("Capital: "), 0, 4); gpCreate.add(lblDataCapital, 1, 4);
+		gpCreate.add(new Label("Population: "), 0, 5); gpCreate.add(lblDataPop, 1, 5);
+		gpCreate.add(new Label("Year of joining: "), 0, 6); gpCreate.add(lblDataYear, 1, 6);
+		gpCreate.add(new Label("Area: "), 0, 7); gpCreate.add(lblDataArea, 1, 7);
+		gpCreate.add(new Label("Language: "), 0, 8); gpCreate.add(lblDataLang, 1, 8);
 		
 		
 		//add right side of view - just basic details
