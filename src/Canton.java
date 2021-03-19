@@ -1,3 +1,4 @@
+import javafx.scene.image.ImageView;
 
 public class Canton {
 	
@@ -6,14 +7,16 @@ public class Canton {
 	private CantonNames name;
 	private Language language;
 	private String shortform;
+	private ImageView flag;
 	
 	
-	public Canton(CantonNames name, int population, int year, Language language, String shortform) {
+	public Canton(CantonNames name, int population, int year, Language language, String shortform, ImageView flag) {
 		this.population = population;
 		this.year = year;
 		this.name = name;
 		this.language = language;
 		this.shortform = shortform;
+		this.flag = flag;
 	}
 	
 	
