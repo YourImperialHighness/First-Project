@@ -34,7 +34,7 @@ public class Cantons_Controller {
 		
 		int number = Integer.parseInt(newValue);
 		
-		if (number > 1291 && number < 2022 ) {
+		if (number > 1290 && number < 2022 ) {
 			valid = true;
 		} else {
 			valid = false;
