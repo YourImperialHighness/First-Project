@@ -101,7 +101,7 @@ public class Cantons_View {
 		gpCreate.setId("dataDisplay");
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
-		gpCreate.add(new Label("Flag: "), 0, 1);//gpCreate.add(imageView, 1, 1);
+		gpCreate.add(new Label("Flag: "), 0, 9);//gpCreate.add(imageView, 1, 1);
 		
 	
 
@@ -129,8 +129,11 @@ public class Cantons_View {
 		
 		Scene scene = new Scene(pane);
 		scene.getStylesheets().add(
-				getClass().getResource("Validator.css").toExternalForm());        
+				getClass().getResource("Validator.css").toExternalForm());  
+		
         stage.setScene(scene);
+        
+        
 		
 	}
 	
