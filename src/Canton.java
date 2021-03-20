@@ -66,6 +66,10 @@ public class Canton {
 		// TODO Auto-generated method stub
 		return this.language;
 	}
+	
+	public ImageView getFlag() {
+		return this.flag;
+	}
 
 
 	public void setPopulation(int i) {
@@ -95,6 +99,10 @@ public class Canton {
 	public void setLanguage(String text) {
 		// TODO Auto-generated method stub
 		this.language = Language.valueOf(text);
+	}
+	
+	public void setFlag (ImageView flag) {
+		this.flag = flag;
 	}
 
 
