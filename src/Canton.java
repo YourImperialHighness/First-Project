@@ -7,17 +7,17 @@ public class Canton {
 	private CantonNames name;
 	private Language language;
 	private String shortform;
-	private ImageView flag;
+	private String flag;
 	private int area;
 	
 	
-	public Canton(CantonNames name, int population, int year, int area, Language language, String shortform, ImageView flag) {
+	public Canton(CantonNames name, int population, int year, int area, Language language, String shortform, String f) {
 		this.population = population;
 		this.year = year;
 		this.name = name;
 		this.language = language;
 		this.shortform = shortform;
-		this.flag = flag;
+		this.flag = f;
 		this.area = area;
 	}
 	
@@ -95,6 +95,9 @@ public class Canton {
 	public void setLanguage(String text) {
 		// TODO Auto-generated method stub
 		this.language = Language.valueOf(text);
+	}
+	public String getFlag(){
+		return this.flag;
 	}
 
 
