@@ -1,7 +1,10 @@
+import java.io.File;
+
 import com.sun.tools.javac.Main;
 
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 
 public class Cantons_Controller {
 	private Cantons_Model model;
@@ -29,6 +32,7 @@ public class Cantons_Controller {
 		
 		view.btnSubmit.setOnAction(this::submitData);
 		view.btnUpdate.setOnAction(this::updateView);
+		// Test zum Datei speichern view.btnSave.setOnAction(this::saveFile);
 
 	}
 		
@@ -136,6 +140,25 @@ public class Cantons_Controller {
 	private void delete(ActionEvent e) {
 		//TODO
 	}
+	
+	//Test zum Datei abspeichern
+	/*private void saveFile () {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Speichere Datei");
+		// damit kommen wir direkt in den Benutzerordner auf dem Rechner des Nutzers
+		fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+		// damit legen wir fest, welche Datentypen wir zulassen
+		fileChooser.getExtensionFilters().addAll(
+			    new FileChooser.ExtensionFilter("TXT", "*.txt")
+		);
+
+			File file = fileChooser.showSaveDialog(view.getStage());
+			 if (file != null) {
+	                saveFile(file);
+	            }
+	}*/
+	
 	private void submitData(ActionEvent e) {
 		//model.submitData();
 		//selected item

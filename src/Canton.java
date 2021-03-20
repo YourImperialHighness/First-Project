@@ -67,7 +67,7 @@ public class Canton {
 		return this.language;
 	}
 	
-	public ImageView getFlag() {
+	public String getFlag() {
 		return this.flag;
 	}
 
@@ -100,15 +100,7 @@ public class Canton {
 		// TODO Auto-generated method stub
 		this.language = Language.valueOf(text);
 	}
-<<<<<<< HEAD
-	
-	public void setFlag (ImageView flag) {
-		this.flag = flag;
-=======
-	public String getFlag(){
-		return this.flag;
->>>>>>> refs/remotes/origin/main
-	}
+
 
 
 	
