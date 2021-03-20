@@ -1,6 +1,6 @@
 public enum CantonNames {
 	
-	Zurich ("Zurich"), Bern ("Bern"), Luzern ("Luzern"), Uri("Luzern"), Schwyz("Luzern"), Obwalden("Luzern"), Nidwalden("Luzern"), Glarus("Luzern"), Zug("Luzern"), Freiburg("Luzern"), Solothurn("Luzern"), Baselstadt("Luzern"), Basellandschaft("Luzern"), Schaffhausen("Luzern"), Appenzell_AR("Luzern"), Appenzell_IR("Luzern"), St_Gallen("Luzern"), Graubunden("Luzern"), Aargau("Luzern"), Thurgau("Luzern"), Tessin("Luzern"), Waadt("Luzern"), Wallis("Luzern"), Neuenburg("Luzern"), Genf("Luzern"), Jura("Delemont");
+	Zurich ("Zurich"), Bern ("Bern"), Luzern ("Luzern"), Uri("Altdorf"), Schwyz("Schwyz"), Obwalden("Sarnen"), Nidwalden("Stans"), Glarus("Glarus"), Zug("Zug"), Freiburg("Freiburg"), Solothurn("Solothurn"), Baselstadt("Basel"), Basellandschaft("Liestal"), Schaffhausen("Schaffhausen"), Appenzell_AR("Herisau"), Appenzell_IR("Appenzell"), St_Gallen("St Gallen"), Graubunden("Chur"), Aargau("Aarau"), Thurgau("Frauenfeld"), Tessin("Bellinzona"), Waadt("Lausanne"), Wallis("Sion"), Neuenburg("Neuenburg"), Genf("Genf"), Jura("Delemont");
 	
 	private String capital;
 	

@@ -29,3 +29,11 @@
 .LanguageNotOk {
   -fx-text-fill: red;
 }
+
+.AreaOk {
+  -fx-text-fill: green;
+}
+
+.AreaNotOk {
+  -fx-text-fill: red;
+}

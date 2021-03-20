@@ -22,6 +22,7 @@ public class Cantons_Controller {
 		view.textShortForm.textProperty().addListener((observable, oldValue, newValue) -> validateShortForm(newValue));
 		view.textPopulation.textProperty().addListener((observable, oldValue, newValue) -> validatePopulation(newValue));
 		view.textLanguage.textProperty().addListener((observable, oldValue, newValue) -> validateLanguage(newValue));
+		view.textArea.textProperty().addListener((observable, oldValue, newValue) -> validateArea(newValue));
 		
 		view.btnSubmit.setOnAction(this::submitData);
 		view.btnUpdate.setOnAction(this::updateView);
@@ -33,7 +34,7 @@ public class Cantons_Controller {
 		
 		int number = Integer.parseInt(newValue);
 		
-		if (number > 1291 && number < 2022 ) {
+		if (number > 1290 && number < 2022 ) {
 			valid = true;
 		} else {
 			valid = false;
@@ -103,6 +104,26 @@ public class Cantons_Controller {
 		 view.textPopulation.getStyleClass().add("PopulationOk");
 		 } else {
 		 view.textPopulation.getStyleClass().add("PopulationNotOk");
+		 }
+	}
+	
+	private void validateArea(String newValue) {
+		boolean valid = false;
+		
+		int number = Integer.parseInt(newValue);
+		
+		if (number >= 1 && istEineZahl(newValue) ) {
+			valid = true;
+		} else {
+			valid = false;
+		}
+
+		view.textArea.getStyleClass().remove("AreaNotOk");
+		 view.textArea.getStyleClass().remove("AreaOk");
+		 if (valid) {
+		 view.textArea.getStyleClass().add("AreaOk");
+		 } else {
+		 view.textArea.getStyleClass().add("AreaNotOk");
 		 }
 	}
 	
