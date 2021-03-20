@@ -3,6 +3,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -24,6 +25,10 @@ public class Cantons_View {
 	public Label lblDataArea = new Label();
 	public Label lblDataShortform = new Label();
 	public Label lblDataLang = new Label();
+	
+	protected String imageInput = new String();
+	protected Image image = new Image(imageInput);
+	protected ImageView imageView = new ImageView(image);
 
 	
 	protected TextField textShortForm;
@@ -95,7 +100,7 @@ public class Cantons_View {
 		gpCreate.setId("dataDisplay");
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
-		gpCreate.add(new Label("Flag: "), 0, 1);
+		gpCreate.add(new Label("Flag: "), 0, 1); gpCreate.add((imageView), 1, 1);
 
 		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
 		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
@@ -112,9 +117,8 @@ public class Cantons_View {
 		vbox.getChildren().add(gpEnter);
 		vbox.getChildren().add(gpControl);	
 		vbox.getChildren().add(gpCreate);
-		vbox.getChildren().add( new ImageView ("kt-ag.jpg"));
 		
-		//Flagge einfügen Test
+	
 		
 		
 		

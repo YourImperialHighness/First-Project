@@ -58,7 +58,8 @@ public class Cantons_Model {
 		CantonNames enums[] = CantonNames.values();
 
 		for (int i=0; i<26; i++) {
-			Canton cantonli = new Canton(enums[i], 0, 0, 0, Language.Deutsch , "x", null );
+			
+			Canton cantonli = new Canton(enums[i], 0, 0, 0, Language.Deutsch , "ZH");
 
 			arr[i] = cantonli;
 		}

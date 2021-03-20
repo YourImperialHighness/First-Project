@@ -137,6 +137,7 @@ public class Cantons_Controller {
 			view.lblDataArea.setText(String.valueOf(canton.getArea()));
 			view.lblDataShortform.setText(canton.getShortform());
 			view.lblDataLang.setText(String.valueOf(canton.getLanguage()));
+			
 		} else {
 			view.lblDataCapital.setText("N/A");
 			view.lblDataName.setText("N/A");
