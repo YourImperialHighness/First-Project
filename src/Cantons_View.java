@@ -3,6 +3,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -24,6 +25,7 @@ public class Cantons_View {
 	public Label lblDataArea = new Label();
 	public Label lblDataShortform = new Label();
 	public Label lblDataLang = new Label();
+	public Label lblImageLink= new Label();
 
 	
 	protected TextField textShortForm;
@@ -33,6 +35,10 @@ public class Cantons_View {
 	protected TextField textYear;
 	protected TextField textLanguage;
 	
+	
+	//String ImageInput = new String();
+	Image image = new Image("kt2.jpg");
+	ImageView imageView = new ImageView (image);
 	
 
 	ListView<Canton> list = new ListView<Canton>();
@@ -89,13 +95,15 @@ public class Cantons_View {
 		gpControl.add(new Label("Control Area"), 0, 0);
 		gpControl.add(btnUpdate, 0, 1);
 		gpControl.add(new Button("Sort Cantons"), 0, 2);
-		gpControl.add(new Button("Delete Canton"), 0, 3);
+		gpControl.add(new Button("Delete Data"), 0, 3);
 		
 		GridPane gpCreate = new GridPane();
 		gpCreate.setId("dataDisplay");
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
-		gpCreate.add(new Label("Flag: "), 0, 1);
+		gpCreate.add(new Label("Flag: "), 0, 1);//gpCreate.add(imageView, 1, 1);
+		
+	
 
 		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
 		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
@@ -112,7 +120,8 @@ public class Cantons_View {
 		vbox.getChildren().add(gpEnter);
 		vbox.getChildren().add(gpControl);	
 		vbox.getChildren().add(gpCreate);
-		vbox.getChildren().add( new ImageView ("kt-ag.jpg"));
+		vbox.getChildren().add(imageView);
+		
 		
 		//Flagge einfügen Test
 		

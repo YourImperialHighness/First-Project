@@ -1,4 +1,7 @@
+import com.sun.tools.javac.Main;
+
 import javafx.event.ActionEvent;
+import javafx.scene.image.Image;
 
 public class Cantons_Controller {
 	private Cantons_Model model;
@@ -158,6 +161,15 @@ public class Cantons_Controller {
 			view.lblDataArea.setText(String.valueOf(canton.getArea()));
 			view.lblDataShortform.setText(canton.getShortform());
 			view.lblDataLang.setText(String.valueOf(canton.getLanguage()));
+			//view.ImageInput = canton.getFlag();
+			//view.lblImageLink.setText(canton.getFlag());
+			//view.ImageInput= canton.getFlag();
+			//view.image(canton.getFlag());
+			view.imageView.setImage(new Image(canton.getFlag()));
+			
+			
+			
+			
 		} else {
 			view.lblDataCapital.setText("N/A");
 			view.lblDataName.setText("N/A");

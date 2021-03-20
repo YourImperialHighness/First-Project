@@ -56,9 +56,11 @@ public class Cantons_Model {
 
 	public void initializeArray() {
 		CantonNames enums[] = CantonNames.values();
+		flagLinks enums2[] = flagLinks.values();
 
 		for (int i=0; i<26; i++) {
-			Canton cantonli = new Canton(enums[i], 0, 0, 0, Language.Deutsch , "x", null );
+			flagLinks link = enums2[i];
+			Canton cantonli = new Canton(enums[i], 0, 0, 0, Language.Deutsch , "x","kt"+(i+1)+".jpg");
 
 			arr[i] = cantonli;
 		}
