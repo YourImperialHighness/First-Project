@@ -1,5 +1,7 @@
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -7,7 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Cantons_View {
@@ -26,26 +30,22 @@ public class Cantons_View {
 	public Label lblDataShortform = new Label();
 	public Label lblDataLang = new Label();
 	public Label lblImageLink= new Label();
-
 	
 	protected TextField textShortForm;
 	protected TextField textPopulation;
 	protected TextField textArea;
-
 	protected TextField textYear;
-	protected TextField textLanguage;
-	
-	
+	protected CheckBox dt;
+	protected CheckBox fr;
+	protected CheckBox it;
+	protected CheckBox rr;
+
 	//String ImageInput = new String();
 	Image image = new Image("kt2.jpg");
 	ImageView imageView = new ImageView (image);
-	
 
 	ListView<Canton> list = new ListView<Canton>();
 
-
-		
-	
 	protected Cantons_View(Stage stage, Cantons_Model model) {
 		this.stage = stage;
 		this.model = model;
@@ -62,10 +62,10 @@ public class Cantons_View {
 		pane.setLeft(list);
 		
 		GridPane gpEnter = new GridPane();
+		gpEnter.setVgap(10);
 		gpEnter.setId("dataEntry");
 		//TODO - declare controls and organize layout
-		gpEnter.add(new Label("Enter new data: "), 0, 0);
-		
+		gpEnter.add(new Label("Enter new Data"), 0,0);
 		gpEnter.add(new Label("Shortform of the Canton: "), 0, 2);
 		gpEnter.add(textShortForm = new TextField(""), 1, 2);
 		
@@ -77,33 +77,31 @@ public class Cantons_View {
 		gpEnter.add(new Label("Area km2: "), 0, 5);
 		gpEnter.add(textArea = new TextField(""), 1, 5);
 		gpEnter.add(new Label("Language: "), 0, 6);
-		gpEnter.add(textLanguage = new TextField(""), 1, 6);
-		gpEnter.add(btnSubmit, 1, 7);
-
-		
-
-		
-		
-		
-	
-		
+		gpEnter.add(dt = new CheckBox("Deutsch"), 1, 6);
+		gpEnter.add(fr = new CheckBox("Französisch"), 1, 7);
+		gpEnter.add(it = new CheckBox("Italienisch"), 1, 8);
+		gpEnter.add(rr = new CheckBox("Rätoromänisch"), 1, 9);
+		gpEnter.add(btnSubmit, 1, 10);
 
 		
 		GridPane gpControl = new GridPane();
+		gpControl.setVgap(5);
 		gpControl.setId("ControlArea");
 		//TODO - declare controls and organize layout
 		gpControl.add(new Label("Control Area"), 0, 0);
+		
 		gpControl.add(btnUpdate, 0, 1);
-		gpControl.add(new Button("Sort Cantons"), 0, 2);
-		gpControl.add(new Button("Delete Data"), 0, 3);
+		gpControl.add(new Button("Delete Data"), 0, 2);
+		gpControl.add(new Label(" "), 0, 3);
+
 		
 		GridPane gpCreate = new GridPane();
+		gpCreate.setVgap(5);
 		gpCreate.setId("dataDisplay");
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
 		gpCreate.add(new Label("Flag: "), 0, 9);//gpCreate.add(imageView, 1, 1);
 		
-	
 
 		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
 		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
@@ -114,8 +112,6 @@ public class Cantons_View {
 		gpCreate.add(new Label("Language: "), 0, 8); gpCreate.add(lblDataLang, 1, 8);
 
 	
-		
-		
 		//add right side of view - just basic details
 		vbox.getChildren().add(gpEnter);
 		vbox.getChildren().add(gpControl);	
@@ -126,13 +122,11 @@ public class Cantons_View {
 		//Flagge einfügen Test
 		
 		
-		
 		Scene scene = new Scene(pane);
 		scene.getStylesheets().add(
 				getClass().getResource("Validator.css").toExternalForm());  
 		
         stage.setScene(scene);
-        
         
 		
 	}

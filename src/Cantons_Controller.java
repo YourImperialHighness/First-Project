@@ -24,7 +24,7 @@ public class Cantons_Controller {
 		view.textYear.textProperty().addListener((observable, oldValue, newValue) -> validateYear(newValue));
 		view.textShortForm.textProperty().addListener((observable, oldValue, newValue) -> validateShortForm(newValue));
 		view.textPopulation.textProperty().addListener((observable, oldValue, newValue) -> validatePopulation(newValue));
-		view.textLanguage.textProperty().addListener((observable, oldValue, newValue) -> validateLanguage(newValue));
+		
 		view.textArea.textProperty().addListener((observable, oldValue, newValue) -> validateArea(newValue));
 		
 		view.btnSubmit.setOnAction(this::submitData);
@@ -71,24 +71,7 @@ public class Cantons_Controller {
 		 }
 	}
 	
-	private void validateLanguage(String newValue) {
-		boolean valid = false;
-		
-		
-		if (isAlpha(newValue)) {
-			valid = true;
-		} else {
-			valid = false;
-		}
-
-		view.textLanguage.getStyleClass().remove("LanguageNotOk");
-		 view.textLanguage.getStyleClass().remove("LanguageFormOk");
-		 if (valid) {
-		 view.textLanguage.getStyleClass().add("LanguageOk");
-		 } else {
-		 view.textLanguage.getStyleClass().add("LanguageNotOk");
-		 }
-	}
+	
 	
 	private void validatePopulation(String newValue) {
 		boolean valid = false;
@@ -147,7 +130,7 @@ public class Cantons_Controller {
 		canton.setYear(Integer.parseInt(view.textYear.getText()));
 		canton.setArea(Integer.parseInt(view.textArea.getText()));
 		canton.setShortform((view.textShortForm.getText()));
-		canton.setLanguage(view.textLanguage.getText());
+	
 		//updateView(view.list.getSelectionModel().getSelectedItem());
 	}
 	private void updateView(ActionEvent e) {
