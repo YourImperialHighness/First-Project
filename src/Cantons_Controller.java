@@ -142,10 +142,10 @@ public class Cantons_Controller {
 	/*private void saveFile () {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Speichere Datei");
-		// damit kommen wir direkt in den Benutzerordner auf dem Rechner des Nutzers
+		
 		fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
 
-		// damit legen wir fest, welche Datentypen wir zulassen
+		
 		fileChooser.getExtensionFilters().addAll(
 			    new FileChooser.ExtensionFilter("TXT", "*.txt")
 		);
