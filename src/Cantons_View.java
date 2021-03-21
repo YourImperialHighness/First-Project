@@ -2,6 +2,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -52,6 +53,7 @@ public class Cantons_View {
 	ImageView imageView = new ImageView(image);
 
 	ListView<Canton> list = new ListView<Canton>();
+	ComboBox<Language> comboBox = new ComboBox<Language>();
 
 	protected Cantons_View(Stage stage, Cantons_Model model) {
 		this.stage = stage;
@@ -89,10 +91,13 @@ public class Cantons_View {
 		gpEnter.add(new Label("Area km2: "), 0, 5);
 		gpEnter.add(textArea = new TextField(""), 1, 5);
 		gpEnter.add(new Label("Language: "), 0, 6);
-		gpEnter.add(dt = new CheckBox("Deutsch"), 1, 6);
-		gpEnter.add(fr = new CheckBox("Französisch"), 1, 7);
-		gpEnter.add(it = new CheckBox("Italienisch"), 1, 8);
-		gpEnter.add(rr = new CheckBox("Rätoromänisch"), 1, 9);
+		gpEnter.add(comboBox, 1, 6);
+		//populate combobox
+		comboBox.setItems(model.getCombo());
+		//gpEnter.add(dt = new CheckBox("Deutsch"), 1, 6);
+		//gpEnter.add(fr = new CheckBox("Französisch"), 1, 7);
+		//gpEnter.add(it = new CheckBox("Italienisch"), 1, 8);
+		//gpEnter.add(rr = new CheckBox("Rätoromänisch"), 1, 9);
 		gpEnter.add(new Label(""), 1, 10);
 		gpEnter.add(btnSubmit, 1, 11);
 

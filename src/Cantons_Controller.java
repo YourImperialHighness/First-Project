@@ -1,8 +1,12 @@
+import java.awt.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import com.sun.tools.javac.Main;
 
@@ -129,10 +133,10 @@ public class Cantons_Controller {
 		canton.setShortform("N/A");
 		canton.setYear(0);
 
-		view.lblDataPop.setText("0");
-		view.lblDataYear.setText("0");
+		view.lblDataPop.setText("N/A");
+		view.lblDataYear.setText("N/A");
 		view.lblDataShortform.setText("N/A");
-		view.lblDataArea.setText("0");
+		view.lblDataArea.setText("N/A");
 
 	}
 
@@ -140,6 +144,9 @@ public class Cantons_Controller {
 		// model.submitData();
 		// selected item
 		Canton canton = (Canton) view.list.getSelectionModel().getSelectedItem();
+		Language lang = (Language) view.comboBox.getSelectionModel().getSelectedItem();
+		
+		canton.setLanguage(String.valueOf(lang));
 		// edit canton data in canton
 		// canton.setName(String.valueOf(canton));
 		// view.lblDataCapital.setText(canton.getCapital(canton));
@@ -187,6 +194,7 @@ public class Cantons_Controller {
 			view.lblDataName.setText("N/A");
 			view.lblDataPop.setText("N/A");
 			view.lblDataYear.setText("N/A");
+			view.lblDataShortform.setText("N/A");
 		}
 	}
 
