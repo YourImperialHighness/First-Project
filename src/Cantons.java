@@ -11,6 +11,11 @@ public class Cantons extends Application {
 		view = new Cantons_View(primaryStage, model);
 		controller = new Cantons_Controller(model, view);
 		
+		view.title1.setStyle("-fx-font: normal bold 15px 'serif' ");
+		view.btnSubmit.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+		view.btnUpdate.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+		view.btnSave.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+		view.deleteButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 		view.start();
 		
 		

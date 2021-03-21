@@ -1,4 +1,4 @@
-
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -21,6 +21,7 @@ public class Cantons_View {
 	//buttons
 	Button btnUpdate = new Button("Update Cantons");
 	Button btnSubmit = new Button("Submit new data");
+	Button btnSave = new Button ("Datei speichern");
 	//data fields labels
 	public Label lblDataCapital = new Label();
 	public Label lblDataName = new Label();
@@ -39,9 +40,12 @@ public class Cantons_View {
 	protected CheckBox fr;
 	protected CheckBox it;
 	protected CheckBox rr;
+	protected Label title1;
+	protected Button deleteButton;
+	protected Button updateButton;
 
 	//String ImageInput = new String();
-	Image image = new Image("kt2.jpg");
+	Image image = new Image("schweiz.jpg");
 	ImageView imageView = new ImageView (image);
 
 	ListView<Canton> list = new ListView<Canton>();
@@ -53,8 +57,11 @@ public class Cantons_View {
 		stage.setTitle("Kantönli");
 		//root
 		BorderPane pane = new BorderPane();
-		//right side vBox
+		//center vBox
 		VBox vbox = new VBox();
+		//right side Save Button
+
+		
 		pane.setCenter(vbox);
 		//list for showing cantons - getList in model
 		
@@ -65,7 +72,7 @@ public class Cantons_View {
 		gpEnter.setVgap(10);
 		gpEnter.setId("dataEntry");
 		//TODO - declare controls and organize layout
-		gpEnter.add(new Label("Enter new Data"), 0,0);
+		gpEnter.add(title1 = new Label("Enter new Data"), 0,0);
 		gpEnter.add(new Label("Shortform of the Canton: "), 0, 2);
 		gpEnter.add(textShortForm = new TextField(""), 1, 2);
 		
@@ -91,7 +98,7 @@ public class Cantons_View {
 		gpControl.add(new Label("Control Area"), 0, 0);
 		
 		gpControl.add(btnUpdate, 0, 1);
-		gpControl.add(new Button("Delete Data"), 0, 2);
+		gpControl.add(deleteButton = new Button("Delete Data"), 0, 2);
 		gpControl.add(new Label(" "), 0, 3);
 
 		
@@ -101,7 +108,10 @@ public class Cantons_View {
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
 		gpCreate.add(new Label("Flag: "), 0, 9);//gpCreate.add(imageView, 1, 1);
-		
+		gpCreate.add(new Label("Flag: "), 0, 1);
+		//Datei abspeichern
+		gpCreate.add(btnSave = new Button("Datei speichern"), 40, 30);
+	
 
 		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
 		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
@@ -117,9 +127,9 @@ public class Cantons_View {
 		vbox.getChildren().add(gpControl);	
 		vbox.getChildren().add(gpCreate);
 		vbox.getChildren().add(imageView);
+		imageView.setFitHeight(60);
+		imageView.setFitWidth(60);
 		
-		
-		//Flagge einfügen Test
 		
 		
 		Scene scene = new Scene(pane);
