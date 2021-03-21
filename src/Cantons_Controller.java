@@ -32,7 +32,9 @@ public class Cantons_Controller {
 		
 		view.btnSubmit.setOnAction(this::submitData);
 		view.btnUpdate.setOnAction(this::updateView);
-		// Test zum Datei speichern view.btnSave.setOnAction(this::saveFile);
+		// Test zum Datei speichern 
+		//view.btnSave.setOnAction(this::saveFile);
+		view.btnDelete.setOnAction(this::deleteData);
 
 	}
 		
@@ -120,8 +122,20 @@ public class Cantons_Controller {
 	private void save(ActionEvent e) {
 		//TODO
 	}
-	private void delete(ActionEvent e) {
-		//TODO
+	private void deleteData(ActionEvent e) {
+		
+		Canton canton = (Canton)view.list.getSelectionModel().getSelectedItem();
+		canton.setArea(0);
+		canton.setPopulation(0);
+		canton.setShortform("N/A");
+		canton.setYear(0);
+		
+		
+		view.lblDataPop.setText("0");
+		view.lblDataYear.setText("0");
+		view.lblDataShortform.setText("N/A");
+		view.lblDataArea.setText("0");
+		
 	}
 	
 	//Test zum Datei abspeichern
@@ -155,6 +169,7 @@ public class Cantons_Controller {
 		canton.setShortform((view.textShortForm.getText()));
 	
 		//updateView(view.list.getSelectionModel().getSelectedItem());
+		
 	}
 	private void updateView(ActionEvent e) {
 		//TODO
