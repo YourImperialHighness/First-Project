@@ -60,7 +60,7 @@ public class Cantons_Model {
 
 		for (int i=0; i<26; i++) {
 			flagLinks link = enums2[i];
-			Canton cantonli = new Canton(enums[i], 0, 0, 0, Language.Deutsch , "x","kt"+(i+1)+".jpg");
+			Canton cantonli = new Canton(enums[i], 0, 0, 0, Language.Deutsch , "N/A","kt"+(i+1)+".jpg");
 
 			arr[i] = cantonli;
 		}

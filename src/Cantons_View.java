@@ -18,7 +18,9 @@ public class Cantons_View {
 	//buttons
 	Button btnUpdate = new Button("Update Cantons");
 	Button btnSubmit = new Button("Submit new data");
-	Button btnSave = new Button ("Datei speichern");
+	Button btnSave = new Button ("Save to File");
+	Button btnDelete = new Button("Delete Data");
+	
 	//data fields labels
 	public Label lblDataCapital = new Label();
 	public Label lblDataName = new Label();
@@ -99,16 +101,17 @@ public class Cantons_View {
 		//TODO - declare controls and organize layout
 		gpControl.add(new Label("Control Area"), 0, 0);
 		gpControl.add(btnUpdate, 0, 1);
-		gpControl.add(new Button("Sort Cantons"), 0, 2);
-		gpControl.add(new Button("Delete Data"), 0, 3);
+		
+		gpControl.add(btnDelete, 0, 2);
+		gpControl.add(btnSave, 0, 3);
 		
 		GridPane gpCreate = new GridPane();
 		gpCreate.setId("dataDisplay");
 		//TODO - declare controls and organize layout
 		gpCreate.add(new Label("Data display Area"), 0, 0);
-		gpCreate.add(new Label("Flag: "), 0, 1);
+		gpCreate.add(new Label("Flag: "), 0, 9);
 		//Datei abspeichern
-		gpCreate.add(btnSave = new Button("Datei speichern"), 40, 30);
+		
 	
 
 		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
@@ -127,6 +130,7 @@ public class Cantons_View {
 		vbox.getChildren().add(gpControl);	
 		vbox.getChildren().add(gpCreate);
 		vbox.getChildren().add(imageView);
+		
 		imageView.setFitHeight(60);
 		imageView.setFitWidth(60);
 		
