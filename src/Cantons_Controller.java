@@ -1,5 +1,8 @@
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 
 import com.sun.tools.javac.Main;
 
@@ -29,6 +32,14 @@ public class Cantons_Controller {
 		view.btnSubmit.setOnAction(this::submitData);
 		view.btnUpdate.setOnAction(this::updateView);
 		view.btnDelete.setOnAction(this::deleteData);
+		view.btnSave.setOnAction(arg0 -> {
+			try {
+				saveFile(arg0);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 
 	}
 
@@ -110,7 +121,6 @@ public class Cantons_Controller {
 		}
 	}
 
-
 	private void deleteData(ActionEvent e) {
 
 		Canton canton = (Canton) view.list.getSelectionModel().getSelectedItem();
@@ -126,8 +136,6 @@ public class Cantons_Controller {
 
 	}
 
-
-
 	private void submitData(ActionEvent e) {
 		// model.submitData();
 		// selected item
@@ -139,6 +147,19 @@ public class Cantons_Controller {
 		canton.setYear(Integer.parseInt(view.textYear.getText()));
 		canton.setArea(Integer.parseInt(view.textArea.getText()));
 		canton.setShortform((view.textShortForm.getText()));
+
+		if (view.dt.isSelected()) {
+			canton.setLanguage("Deutsch");
+		}
+		if (view.fr.isSelected()) {
+			canton.setLanguage("Französisch");
+		}
+		if (view.it.isSelected()) {
+			canton.setLanguage("Italienisch");
+		}
+		if (view.rr.isSelected()) {
+			canton.setLanguage("Rätoromanisch");
+		}
 
 		// updateView(view.list.getSelectionModel().getSelectedItem());
 
@@ -169,6 +190,16 @@ public class Cantons_Controller {
 		}
 	}
 
+	public void saveFile(ActionEvent e) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter(new FileOutputStream("cantons.txt"));
+		for (Canton canton : model.getArray()) {
+			pw.println("Canton: " + canton.getName() + " \t Shortform: " + canton.getShortform() + " \t Area: "
+					+ String.valueOf(canton.getArea()) + " \t Population: " + String.valueOf(canton.getPopulation())
+					+ " \t Capital: " + String.valueOf(canton.getCapital(canton)) + " \t Year: "
+					+ String.valueOf(canton.getYear()));
+		}
+		pw.close();
+	}
 
 	public boolean istEineZahl(String eingabe) {
 		// Prüfen ob 'eingabe' eine ganze Zahl ist. Wenn ein Zeichen keine Zahl ist, ist
