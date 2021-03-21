@@ -1,4 +1,7 @@
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
 import com.sun.tools.javac.Main;
 
@@ -33,7 +36,14 @@ public class Cantons_Controller {
 		view.btnSubmit.setOnAction(this::submitData);
 		view.btnUpdate.setOnAction(this::updateView);
 		// Test zum Datei speichern 
-		//view.btnSave.setOnAction(this::saveFile);
+		view.btnSave.setOnAction(arg0 -> {
+			try {
+				saveFile(arg0);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 		view.btnDelete.setOnAction(this::deleteData);
 
 	}
@@ -155,6 +165,13 @@ public class Cantons_Controller {
 	                saveFile(file);
 	            }
 	}*/
+	
+	public void saveFile(ActionEvent e) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter(new FileOutputStream("cantons.txt"));
+		for (Canton canton : model.getArray()) {
+			pw.println(canton.getName() + "  " + canton.getShortform() + "  " +String.valueOf(canton.getArea()) + "  " +String.valueOf(canton.getPopulation()) + "  " +String.valueOf(canton.getCapital(canton)) + "  " +String.valueOf(canton.getYear()));
+		}pw.close();
+	}
 	
 	private void submitData(ActionEvent e) {
 		//model.submitData();
