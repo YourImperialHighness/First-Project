@@ -12,18 +12,16 @@ public class Cantons extends Application {
 		controller = new Cantons_Controller(model, view);
 		
 		view.title1.setStyle("-fx-font: normal bold 15px 'serif' ");
+		view.title2.setStyle("-fx-font: normal bold 15px 'serif' ");
+		view.title3.setStyle("-fx-font: normal bold 15px 'serif' ");
 		view.btnSubmit.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 		view.btnUpdate.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 		view.btnSave.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-		view.deleteButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+		view.btnDelete.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+		
+		
+		
 		view.start();
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 	

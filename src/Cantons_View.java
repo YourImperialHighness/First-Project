@@ -9,9 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Cantons_View {
@@ -43,8 +42,11 @@ public class Cantons_View {
 	protected CheckBox it;
 	protected CheckBox rr;
 	protected Label title1;
+	protected Label title2;
+	protected Label title3;
 	protected Button deleteButton;
 	protected Button updateButton;
+	
 
 	//String ImageInput = new String();
 	Image image = new Image("schweiz.jpg");
@@ -59,6 +61,7 @@ public class Cantons_View {
 		stage.setTitle("Kantönli");
 		//root
 		BorderPane pane = new BorderPane();
+		pane.setStyle("-fx-background-color: BEIGE;");
 		//center vBox
 		VBox vbox = new VBox();
 		//right side Save Button
@@ -71,10 +74,11 @@ public class Cantons_View {
 		pane.setLeft(list);
 		
 		GridPane gpEnter = new GridPane();
-		gpEnter.setVgap(10);
+		gpEnter.setStyle("-fx-background-color: BEIGE;");
+		gpEnter.setVgap(1);
 		gpEnter.setId("dataEntry");
 		//TODO - declare controls and organize layout
-		gpEnter.add(title1 = new Label("Enter new Data"), 0,0);
+		gpEnter.add(title1 = new Label("Create new Data"), 0,0);
 		gpEnter.add(new Label("Shortform of the Canton: "), 0, 2);
 		gpEnter.add(textShortForm = new TextField(""), 1, 2);
 		
@@ -90,19 +94,21 @@ public class Cantons_View {
 		gpEnter.add(fr = new CheckBox("Französisch"), 1, 7);
 		gpEnter.add(it = new CheckBox("Italienisch"), 1, 8);
 		gpEnter.add(rr = new CheckBox("Rätoromänisch"), 1, 9);
-		gpEnter.add(btnSubmit, 1, 10);
+		gpEnter.add(new Label(""), 1, 10);
+		gpEnter.add(btnSubmit, 1, 11);
 
 		
 		GridPane gpControl = new GridPane();
+		gpControl.setStyle("-fx-background-color: BEIGE;");
 		gpControl.setVgap(5);
 		gpControl.setId("ControlArea");
 		//TODO - declare controls and organize layout
-		gpControl.add(new Label("Control Area"), 0, 0);
+		gpControl.add(title2 = new Label("Options"), 0, 0);
 		
 		gpControl.add(btnUpdate, 0, 1);
 
 		gpControl.add(deleteButton = new Button("Delete Data"), 0, 2);
-		gpControl.add(new Label(" "), 0, 3);
+		gpControl.add(new Label(" "), 0, 4);
 
 
 		
@@ -111,33 +117,44 @@ public class Cantons_View {
 
 		
 		GridPane gpCreate = new GridPane();
-		gpCreate.setVgap(5);
+		gpCreate.setStyle("-fx-background-color: BEIGE;");
+		gpCreate.setVgap(4);
 		gpCreate.setId("dataDisplay");
 		//TODO - declare controls and organize layout
-		gpCreate.add(new Label("Data display Area"), 0, 0);
+		gpCreate.add(title3 = new Label("Data Display"), 0, 0);
 
-		gpCreate.add(new Label("Flag: "), 0, 9);//gpCreate.add(imageView, 1, 1);
-		gpCreate.add(new Label("Flag: "), 0, 1);
-
-		gpCreate.add(new Label("Flag: "), 0, 9);
+		
 		//Datei abspeichern
 		
 	
 
-		gpCreate.add(new Label("Name: "), 0, 2); gpCreate.add(lblDataName, 1, 2);
-		gpCreate.add(new Label("Shortform: "), 0, 3); gpCreate.add(lblDataShortform, 1, 3);
-		gpCreate.add(new Label("Capital: "), 0, 4); gpCreate.add(lblDataCapital, 1, 4);
-		gpCreate.add(new Label("Population: "), 0, 5); gpCreate.add(lblDataPop, 1, 5);
-		gpCreate.add(new Label("Year of joining: "), 0, 6); gpCreate.add(lblDataYear, 1, 6);
-		gpCreate.add(new Label("Area km2: "), 0, 7); gpCreate.add(lblDataArea, 1, 7);
-		gpCreate.add(new Label("Language: "), 0, 8); gpCreate.add(lblDataLang, 1, 8);
-
+		gpCreate.add(new Label("Name:\t\t"), 0, 2); 
+		gpCreate.add(lblDataName, 1, 2);
+		gpCreate.add(new Label("Shortform:\t\t"), 0, 3); 
+		gpCreate.add(lblDataShortform, 1, 3);
+		gpCreate.add(new Label("Capital:\t\t"), 0, 4);
+		gpCreate.add(lblDataCapital, 1, 4);
+		gpCreate.add(new Label("Population:\t\t"), 0, 5); 
+		gpCreate.add(lblDataPop, 1, 5);
+		gpCreate.add(new Label("Year of joining:\t\t"), 0, 6); 
+		gpCreate.add(lblDataYear, 1, 6);
+		gpCreate.add(new Label("Area km2:\t\t"), 0, 7); 
+		gpCreate.add(lblDataArea, 1, 7);
+		gpCreate.add(new Label("Language:\t\t"), 0, 8); 
+		gpCreate.add(lblDataLang, 1, 8);
+		gpCreate.add(new Label(" "), 0, 9); 
 	
 		//add right side of view - just basic details
-		vbox.getChildren().add(gpEnter);
-		vbox.getChildren().add(gpControl);	
+		HBox hbox = new HBox();
+		hbox.getChildren().add(new Label("Flag:\t\t\t\t"));
+		hbox.getChildren().add(imageView);
+		
 		vbox.getChildren().add(gpCreate);
-		vbox.getChildren().add(imageView);
+		vbox.getChildren().add(hbox);
+		vbox.getChildren().add(new Label(" "));
+		vbox.getChildren().add(gpControl);	
+		vbox.getChildren().add(gpEnter);
+		
 		
 		imageView.setFitHeight(60);
 		imageView.setFitWidth(60);
