@@ -71,6 +71,7 @@ public class Cantons_View {
 		//list for showing cantons - getList in model
 		
 		list.setItems(model.getList());
+		list.setStyle("-fx-background-color: yellow;");
 		pane.setLeft(list);
 		
 		GridPane gpEnter = new GridPane();
